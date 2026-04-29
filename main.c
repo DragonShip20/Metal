@@ -1,3 +1,9 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <lexer.h>
+
 int main(int args, char **argv) {
-    return 0;
+    FILE *src;
+    src = fopen("sample/sample_code.mt", "r");
+    printf("File opened.\n");
 }

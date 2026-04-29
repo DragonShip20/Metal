@@ -15,8 +15,8 @@ $(OUT): $(SRC)
 	@echo Compiled with success.
 
 run: $(OUT)
-	@./$(OUT)
 	@echo Starting...
+	@./$(OUT)
 
 clean:
 	@rm -f $(OUT)
