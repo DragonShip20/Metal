@@ -20,3 +20,7 @@ void skip_whitespace(void) {
     while (current == ' ' || current == '\n' || current == '\t')
         advance();
 }
+
+int is_digit(char c) {
+    return (c >= '0' && c <= '9');
+}

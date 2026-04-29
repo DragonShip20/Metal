@@ -9,6 +9,7 @@ int main(int args, char **argv) {
     init_lexer((const char*)src);
     skip_whitespace();
     advance();
-
     printf("File opened.\n");
+    printf("%d\n", is_digit('5'));
+    printf("%d\n", is_digit('a'));
 }
