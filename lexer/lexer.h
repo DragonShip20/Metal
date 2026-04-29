@@ -16,3 +16,4 @@ void skip_whitespace(void);
 int is_digit(char c);
 int is_letter(char c);
 int read_number(char *str);
+int read_word(const char *str, char *out);

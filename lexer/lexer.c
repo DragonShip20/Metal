@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stdlib.h>
 #include <lexer.h>
 
 static const char *src;
@@ -37,4 +38,19 @@ int read_number(char *str) {
         str++;
     }
     return num;
+}
+
+int read_word(const char *str, char *out) {
+    int pos = 0;
+
+    if (!is_letter(str[pos]))
+        return 0;
+
+    while (is_letter(*(str+pos))) {
+        out[pos] = str[pos];
+        pos++;
+    }
+
+    out[pos] ='\0';
+    return pos;
 }
