@@ -10,3 +10,4 @@ typedef struct {
 } Token;
 
 int main();
+void init_lexer(const char *source);
