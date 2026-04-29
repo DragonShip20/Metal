@@ -5,5 +5,10 @@
 int main(int args, char **argv) {
     FILE *src;
     src = fopen("sample/sample_code.mt", "r");
+
+    init_lexer((const char*)src);
+    skip_whitespace();
+    advance();
+
     printf("File opened.\n");
 }

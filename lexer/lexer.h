@@ -11,3 +11,5 @@ typedef struct {
 
 int main();
 void init_lexer(const char *source);
+void advance(void);
+void skip_whitespace(void);
