@@ -8,3 +8,5 @@ typedef struct {
     TokenType type;
     int value;
 } Token;
+
+int main();
