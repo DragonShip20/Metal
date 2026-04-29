@@ -24,3 +24,17 @@ void skip_whitespace(void) {
 int is_digit(char c) {
     return (c >= '0' && c <= '9');
 }
+
+int is_letter(char c) {
+    return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <='z'));
+}
+
+int read_number(char *str) {
+    int num = 0;
+    while (is_digit(*str)) {
+        num *= 10;
+        num += *str - '0';
+        str++;
+    }
+    return num;
+}

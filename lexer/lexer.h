@@ -14,3 +14,5 @@ void init_lexer(const char *source);
 void advance(void);
 void skip_whitespace(void);
 int is_digit(char c);
+int is_letter(char c);
+int read_number(char *str);
