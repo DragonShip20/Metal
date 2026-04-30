@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <lexer.h>
+#include <parser.h>
 
 int main(int args, char **argv) {
     char *code = read_file("sample/sample_code.mlt");

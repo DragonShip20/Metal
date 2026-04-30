@@ -1,3 +1,6 @@
+#ifndef LEXER_H
+#define LEXER_H
+
 typedef enum {
     TOK_SYSCALL,
     TOK_LBRACKET,
@@ -23,3 +26,5 @@ int read_number(void);
 char* read_word(char *out);
 Token next_token(void);
 char* read_file(const char* filename);
+
+#endif
