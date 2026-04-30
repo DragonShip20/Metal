@@ -3,13 +3,16 @@
 #include <lexer.h>
 
 int main(int args, char **argv) {
-    FILE *src;
-    src = fopen("sample/sample_code.mt", "r");
+    char *code = read_file("sample/sample_code.mlt");
 
-    init_lexer((const char*)src);
+    init_lexer(code);
     printf("File opened.\n");
 
-    fclose(src);
+    Token tok = next_token();
+
+    while (tok.type != TOK_EOF) {
+        tok = next_token();
+    }
 
     return 0;
 }
