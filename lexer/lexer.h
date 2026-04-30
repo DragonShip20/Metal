@@ -1,7 +1,10 @@
 typedef enum {
-    TOK_PRINT,
+    TOK_SYSCALL,
+    TOK_LBRACKET,
+    TOK_RBRACKET,
     TOK_NUMBER,
-    TOK_SEMICOLON
+    TOK_SEMICOLON,
+    TOK_COMMA
 } TokenType;
 
 typedef struct {

@@ -9,5 +9,7 @@ int main(int args, char **argv) {
     init_lexer((const char*)src);
     printf("File opened.\n");
 
+    fclose(src);
+
     return 0;
 }
