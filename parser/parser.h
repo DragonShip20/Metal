@@ -3,6 +3,8 @@
 
 #include <lexer.h>
 
+#define MAX_ARGS 8
+
 typedef enum {
     AST_SYSCALL,
     AST_NUMBER,
@@ -11,10 +13,12 @@ typedef enum {
 typedef struct {
     AST_type type;
     int value;
-    int argv[6];
+    char *str;
+    struct AST* argv[MAX_ARGS];
+    int args;
 } AST;
 
 void expect(TokenType type);
-AST* new_number(int value);
+AST* new_number(int v);
 
 #endif

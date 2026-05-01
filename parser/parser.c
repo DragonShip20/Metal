@@ -10,9 +10,10 @@ void expect(TokenType type) {
     current_token = next_token();
 }
 
-AST* new_number(int value) {
+AST* new_number(int v) {
     AST *new = malloc(sizeof(AST));
     new->type = AST_NUMBER;
-    new->value = value;
+    new->value = v;
+    new->args = 0;
     return new;
 }
