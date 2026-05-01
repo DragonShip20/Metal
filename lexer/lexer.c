@@ -63,7 +63,7 @@ Token next_token(void) {
     if (is_digit(current)) {
         current_token.type = TOK_NUMBER;
         current_token.value = read_number();
-        printf("NUMBER %d ", current_token.value);
+        printf("%d", current_token.type);
         return current_token;
     }
 
@@ -74,7 +74,7 @@ Token next_token(void) {
         if (strcmp(buffer, "syscall") == 0)
             current_token.type = TOK_SYSCALL;
 
-        printf("STRING %s ", buffer);
+        printf("%d", current_token.type);
 
         return current_token;
     }
@@ -82,27 +82,27 @@ Token next_token(void) {
     switch (current) {
     case '[':
         current_token.type = TOK_LBRACKET;
-        printf("LBRACKET ");
+        printf("%d", current_token.type);
         advance();
         return current_token;
     case ']':
         current_token.type = TOK_RBRACKET;
-        printf("RBRACKET ");
+        printf("%d", current_token.type);
         advance();
         return current_token;
     case ';':
         current_token.type = TOK_SEMICOLON;
-        printf("SEMICOLON ");
+        printf("%d", current_token.type);
         advance();
         return current_token;
     case '\0':
         current_token.type = TOK_EOF;
-        printf("EOF ");
+        printf("%d", current_token.type);
         advance();
         return current_token;
     case ',':
         current_token.type = TOK_COMMA;
-        printf("COMMA ");
+        printf("%d", current_token.type);
         advance();
         return current_token;
     default:

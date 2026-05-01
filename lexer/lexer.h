@@ -16,6 +16,8 @@ typedef struct {
     int value;
 } Token;
 
+extern Token current_token;
+
 int main();
 void init_lexer(const char *source);
 void advance(void);

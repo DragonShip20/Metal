@@ -1,6 +1,8 @@
 #ifndef PARSER_H
 #define PARSER_H
 
+#include <lexer.h>
+
 typedef enum {
     AST_SYSCALL,
     AST_NUMBER,
@@ -13,6 +15,6 @@ typedef struct {
     struct AST* right;
 } AST;
 
-void expect(AST_type type);
+void expect(TokenType type);
 
 #endif
