@@ -13,6 +13,6 @@ typedef struct {
     struct AST* right;
 } AST;
 
-int expect(AST_type type);
+void expect(AST_type type);
 
 #endif

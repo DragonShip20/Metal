@@ -1,9 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <parser.h>
+#include <lexer.h>
 
-AST current_node;
+Token current_token;
 
-int expect(AST_type type) {
-    return (current_node.type == type);
+void expect(AST_type type) {
+    if (current_token.type != type) {
+        printf("Expected token: %d Recieved token: %d", type, current_token.type);
+        exit(1);
+    }
+    current_token = next_token();
 }
