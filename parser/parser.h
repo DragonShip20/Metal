@@ -11,10 +11,10 @@ typedef enum {
 typedef struct {
     AST_type type;
     int value;
-    struct AST* left;
-    struct AST* right;
+    int argv[6];
 } AST;
 
 void expect(TokenType type);
+AST* new_number(int value);
 
 #endif
