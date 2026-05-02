@@ -32,3 +32,10 @@ AST* new_node(AST_type type) {
     new->args = 0;
     return new;
 }
+
+AST* new_syscall(int args) {
+    AST *new = malloc(sizeof(AST));
+    new->type = AST_SYSCALL;
+    new->args = args;
+    return new;
+}
