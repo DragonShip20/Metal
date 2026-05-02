@@ -22,5 +22,6 @@ typedef struct {
 void expect(TokenType type);
 AST* new_number(int v);
 AST* new_string(char *str);
+AST* new_node(AST_type type);
 
 #endif

@@ -25,3 +25,10 @@ AST* new_string(char *str) {
     new->args = 0;
     return new;
 }
+
+AST* new_node(AST_type type) {
+    AST *new = malloc(sizeof(AST));
+    new->type = type;
+    new->args = 0;
+    return new;
+}
