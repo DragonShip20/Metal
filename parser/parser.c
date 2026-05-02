@@ -17,3 +17,11 @@ AST* new_number(int v) {
     new->args = 0;
     return new;
 }
+
+AST* new_string(char *str) {
+    AST *new = malloc(sizeof(AST));
+    new->type = AST_STRING;
+    new->str = str;
+    new->args = 0;
+    return new;
+}

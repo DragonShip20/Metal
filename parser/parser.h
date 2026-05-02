@@ -8,6 +8,7 @@
 typedef enum {
     AST_SYSCALL,
     AST_NUMBER,
+    AST_STRING
 } AST_type;
 
 typedef struct {
@@ -20,5 +21,6 @@ typedef struct {
 
 void expect(TokenType type);
 AST* new_number(int v);
+AST* new_string(char *str);
 
 #endif
