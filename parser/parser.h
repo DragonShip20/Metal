@@ -24,5 +24,6 @@ AST* new_number(int v);
 AST* new_string(char *str);
 AST* new_node(AST_type type);
 AST* new_syscall(int args);
+AST* parse_number(void);
 
 #endif

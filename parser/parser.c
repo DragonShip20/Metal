@@ -39,3 +39,9 @@ AST* new_syscall(int args) {
     new->args = args;
     return new;
 }
+
+AST* parse_number(void) {
+    AST *n = new_number(current_token.value);
+    expect(TOK_NUMBER);
+    return n;    
+}
