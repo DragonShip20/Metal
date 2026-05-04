@@ -45,3 +45,23 @@ AST* parse_number(void) {
     expect(TOK_NUMBER);
     return n;    
 }
+
+AST* parse_syscall(void) {
+    expect(TOK_SYSCALL);
+    expect(TOK_LBRACKET);
+
+    AST *node = new_syscall(0);
+    int arg_counter = 0;
+    while (current_token.type != TOK_RBRACKET) {
+        node->argv[arg_counter] = parse_number();
+        if (current_token.type == TOK_RBRACKET) {
+            arg_counter++;
+            break;
+        }
+        expect(TOK_COMMA);
+    }
+    node->args = arg_counter + 1;
+    expect(TOK_RBRACKET);
+    expect(TOK_SEMICOLON);
+    return node;
+}

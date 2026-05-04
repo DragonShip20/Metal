@@ -11,7 +11,7 @@ typedef enum {
     AST_STRING
 } AST_type;
 
-typedef struct {
+typedef struct AST {
     AST_type type;
     int value;
     char *str;
@@ -25,5 +25,6 @@ AST* new_string(char *str);
 AST* new_node(AST_type type);
 AST* new_syscall(int args);
 AST* parse_number(void);
+AST* parse_syscall(void);
 
 #endif

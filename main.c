@@ -8,11 +8,9 @@ int main(int args, char **argv) {
     init_lexer(code);
     printf("File opened.\n");
 
-    Token tok = next_token();
+    next_token();
 
-    while (tok.type != TOK_EOF) {
-        tok = next_token();
-    }
+    parse_syscall();
 
     return 0;
 }
