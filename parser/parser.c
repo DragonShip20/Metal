@@ -56,6 +56,7 @@ AST* parse_syscall(void) {
         node->argv[arg_counter] = parse_number();
         if (current_token.type == TOK_RBRACKET) {
             arg_counter++;
+            node->argv[arg_counter + 1] = NULL;
             break;
         }
         expect(TOK_COMMA);

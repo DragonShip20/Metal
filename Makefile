@@ -7,6 +7,7 @@ SRC = main.c \
       $(wildcard codegen/*.c)	  
 
 OUT = compiler
+ASM = $(wildcard source/*.asm)
 
 all = $(OUT)
 
@@ -20,4 +21,5 @@ run: $(OUT)
 
 clean:
 	@rm -f $(OUT)
+	@rm -f $(ASM)
 	@echo Removed all output files.
