@@ -59,8 +59,9 @@ AST* parse_syscall(void) {
             break;
         }
         expect(TOK_COMMA);
+        arg_counter++;
     }
-    node->args = arg_counter + 1;
+    node->args = arg_counter;
     expect(TOK_RBRACKET);
     expect(TOK_SEMICOLON);
     return node;

@@ -10,9 +10,10 @@ int main(int args, char **argv) {
     printf("File opened.\n");
 
     next_token();
-    parse_syscall();
+    AST *syscall = parse_syscall();
 
     init_codegen("sample/sample_code.asm");
+    gen_syscall(syscall);
     printf("%s", text_section);
     printf("%s", data_section);    
     

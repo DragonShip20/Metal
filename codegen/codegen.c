@@ -1,5 +1,4 @@
 #include <codegen.h>
-#include <string.h>
 
 static const char *syscall_args[7] = {
     "rax",
@@ -23,7 +22,7 @@ FILE* init_codegen(const char *filename) {
     FILE *f = fopen(filename, "w+");
     if (!f)
         return NULL;
-    char *text_init = "global _start\nsection .text\n\t_start:\n";
+    char *text_init = "global _start\nsection .text\n_start:\n";
     char *data_init = "section .data\n";
     emit_data(data_init);
     emit_text(text_init);
@@ -37,3 +36,17 @@ void emit_data(char *str) {
 void emit_text(char *str) {
     strcat(text_section, str);
 }
+
+void gen_reg(const char* reg, AST *number) {
+    char buffer[128];
+    sprintf(buffer, "\tmov %s, %d\n", reg, number->value);
+    emit_text(buffer);
+}
+
+void gen_syscall(AST *syscall) {
+    for (int i=0; i<syscall->args; i++) {
+        gen_reg(syscall_args[i], syscall->argv[i]);
+    }
+    emit_text("\tsyscall\n");
+}
+
