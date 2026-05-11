@@ -12,7 +12,9 @@ int main(int args, char **argv) {
     next_token();
     parse_syscall();
 
-    FILE *output = init_codegen("sample/sample_code.asm");
+    init_codegen("sample/sample_code.asm");
+    printf("%s", text_section);
+    printf("%s", data_section);    
     
     return 0;
 }
