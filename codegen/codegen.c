@@ -12,10 +12,19 @@ static const char *syscall_args[7] = {
 
 char data_section[4096] = "";
 char text_section[8192] = "";
+char output[16384] = "";
 
 void write_file(FILE *file, char *str, int pos) {
     fseek(file, pos, SEEK_SET);
     fprintf(file, str);
+}
+
+void finish_generation(FILE *file) {
+    strcat(output, data_section);
+    strcat(output, "\n");
+    strcat(output, text_section);
+    write_file(file, output, 0);
+    fclose(file);
 }
 
 FILE* init_codegen(const char *filename) {

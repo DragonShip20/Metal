@@ -13,7 +13,7 @@ int main(int args, char **argv) {
     
     AST *syscall = parse_syscall();
 
-    init_codegen("sample/sample_code.asm");
+    FILE *output = init_codegen("sample/sample_code.asm");
     
     gen_syscall(syscall);
 
@@ -22,8 +22,7 @@ int main(int args, char **argv) {
         gen_syscall(syscall);
     }
     
-    printf("%s", text_section);
-    printf("%s", data_section);
+    finish_generation(output);
    
     return 0;
 }
