@@ -8,6 +8,7 @@ SRC = main.c \
       $(wildcard parser/*.c) \
       $(wildcard codegen/*.c)
 
+FILE ?= sample/sample_code.mlt
 OUT = compiler
 ASM = $(wildcard sample/*.asm)
 
@@ -23,7 +24,7 @@ debug: $(SRC)
 
 run: $(OUT)
 	@echo Starting...
-	@./$(OUT)
+	@./$(OUT) $(FILE)
 
 clean:
 	@rm -f $(OUT)
