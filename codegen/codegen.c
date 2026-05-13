@@ -59,3 +59,13 @@ void gen_syscall(AST *syscall) {
     emit_text("\tsyscall\n");
 }
 
+void dump_ast(AST *node) {
+    printf("\n\nNode: %p", node);
+    printf("\nType: %d", node->type);
+    printf("\nValue: %d", node->value);
+    printf("\nArg count: %d", node->args);
+    for (int i=0; i<node->args; i++) {
+        printf("\nArg %d Type: %d", i, node->argv[i]->type);
+        printf("\nArg %d Value: %d", i, node->argv[i]->value);
+    }
+}

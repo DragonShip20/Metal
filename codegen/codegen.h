@@ -14,6 +14,7 @@ void emit_data(char *str);
 void emit_text(char *str);
 void gen_reg(const char *reg, AST *number);
 void gen_syscall(AST *syscall);
+void dump_ast(AST *node);
 void finish_generation(FILE *file);
 
 #endif
